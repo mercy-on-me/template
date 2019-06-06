@@ -1,0 +1,27 @@
+启动项目
+调用 /api/start 接口
+curl -H "Content-Type:application/json" -X POST --data '{"groupName":"group","jobName":"job","cron":"0/5 * * * * ?"}' http://localhost:8080/api/start
+看控制台日志，发现每隔5秒调用一次定时服务
+
+调用 /api/update 接口
+curl -H "Content-Type:application/json" -X POST --data '{"id":1, "cron":"0/8 * * * * ?"}' http://localhost:8080/api/update
+看控制台日志，发现每隔8秒调用一次定时服务
+
+调用 /api/pause 接口
+curl -H "Content-Type:application/json" -X POST --data '{"id":1}' http://localhost:8080/api/pause
+看控制台日志，发现定时任务已停止
+
+调用 /api/resume 接口
+curl -H "Content-Type:application/json" -X POST --data '{"id":1}' http://localhost:8080/api/resume
+看控制台日志，发现定时任务已恢复
+
+调用 /api/delete 接口
+curl -H "Content-Type:application/json" -X POST --data '{"id":1}' http://localhost:8080/api/delete
+发现定时任务已删除
+
+调用 /api/deleteAll 接口
+curl -H "Content-Type:application/json" -X POST --data '{}' http://localhost:8080/api/deleteAll
+此时删除所有的定时任务
+
+
+

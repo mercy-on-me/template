@@ -25,7 +25,7 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-core</artifactId>
-      <version>5.0.3.RELEASE</version>
+      <version>5.3.18</version>
     </dependency>
 
     <!-- Spring IOC的基础实现，包含访问配置文件、创建和管理bean等 -->
